@@ -1,4 +1,4 @@
-import { ads } from "../ads.js";
+import { ads } from "./ads.js";
 import { buildAdView } from "./adView.js";
 
 export function adListController(adListElement) {
