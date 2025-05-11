@@ -1,5 +1,5 @@
-import { ads } from "../models/ads.js";
-import { buildAdView } from "../views/adsView.js";
+import { ads } from "./ads.js";
+import { buildAdView } from "./adsView.js";
 
 export function adListController(adListElement) {
   for (const ad of ads) {
