@@ -5,19 +5,18 @@ export function initSignupController(signupElement) {
   signupElement.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    // Captura de elementos del formulario
     const usernameElement = signupElement.querySelector('#username');
     const emailElement = signupElement.querySelector('#email');
     const passwordElement = signupElement.querySelector('#password');
     const passwordConfirmElement = signupElement.querySelector('#confirmPassword');
 
-    // Validaciones
+    
     if (
       isEmailValid(emailElement.value) &&
       isPasswordValid(passwordElement.value, passwordConfirmElement.value)
     ) {
       try {
-        // Registro del usuario usando la función importada
+        
         await registerUser({
           username: usernameElement.value,
           password: passwordElement.value
@@ -25,7 +24,7 @@ export function initSignupController(signupElement) {
 
         signupElement.reset();
         showSuccessMessage('Usuario creado correctamente');
-        window.location = '/'; // Redirección tras registro exitoso
+        window.location = '/'; 
       } catch (error) {
         showErrorMessage(error.message);
       }
