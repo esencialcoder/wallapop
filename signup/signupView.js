@@ -1,7 +1,7 @@
-export function showSuccessMessage() {
-    alert('Registrado correctamente')
-}
+    export function showSuccessMessage(message) {
+        alert(message)
+    }
 
-export function showErrorMessage() {
-    alert('No se ha registrado')
-}
+    export function showErrorMessage(message) {
+        alert(message)
+    }

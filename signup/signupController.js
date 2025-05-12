@@ -1,53 +1,36 @@
-import { registerUser } from "./signup.js";
-import { showSuccessMessage, showErrorMessage } from "./signupView.js";
+// signup/signupController.js
+import { registerUser } from './signup.js';
+import { showSuccessMessage, showErrorMessage } from './signupView.js';
+import { isEmailValid } from '../utils/isEmailValid.js';
+import { isPasswordValid } from '../utils/isPasswordValid.js';
 
 export function initSignupController(signupElement) {
   signupElement.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const usernameElement = signupElement.querySelector('#username');
-    const emailElement = signupElement.querySelector('#email');
-    const passwordElement = signupElement.querySelector('#password');
-    const passwordConfirmElement = signupElement.querySelector('#confirmPassword');
+    const username = signupElement.querySelector('#username').value.trim();
+    const email    = signupElement.querySelector('#email').value.trim();
+    const password = signupElement.querySelector('#password').value;
+    const confirm  = signupElement.querySelector('#confirmPassword').value;
 
-    
-    if (
-      isEmailValid(emailElement.value) &&
-      isPasswordValid(passwordElement.value, passwordConfirmElement.value)
-    ) {
-      try {
-        
-        await registerUser({
-          username: usernameElement.value,
-          password: passwordElement.value
-        });
+    // Validaciones
+    if (!isEmailValid(email)) {
+      showErrorMessage('El email no está bien escrito');
+      return;
+    }
 
-        signupElement.reset();
-        showSuccessMessage('Usuario creado correctamente');
-        window.location = '/'; 
-      } catch (error) {
-        showErrorMessage(error.message);
-      }
+    if (!isPasswordValid(password, confirm)) {
+      showErrorMessage('Las contraseñas no coinciden o están vacías');
+      return;
+    }
+
+    try {
+      await registerUser({ username, password });
+      signupElement.reset();
+      showSuccessMessage('Usuario creado correctamente');
+      window.location = '/';
+    } catch (error) {
+      showErrorMessage(error.message);
     }
   });
-
-  function isEmailValid(email) {
-    const mailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    if (!mailRegExp.test(email)) {
-      alert('El email no está bien escrito');
-      return false;
-    }
-
-    return true;
-  }
-
-  function isPasswordValid(password, passwordConfirmation) {
-    if (password !== passwordConfirmation) {
-      alert('Las contraseñas no son iguales');
-      return false;
-    }
-
-    return true;
-  }
 }
