@@ -1,19 +1,18 @@
-// signup/signupController.js
 import { registerUser } from './signup.js';
 import { showSuccessMessage, showErrorMessage } from './signupView.js';
 import { isEmailValid } from '../utils/isEmailValid.js';
 import { isPasswordValid } from '../utils/isPasswordValid.js';
 
-export function initSignupController(signupElement) {
+export function initSignupController(signupElement, usernameInput, emailInput, passwordInput,confirmInput,) {
   signupElement.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const username = signupElement.querySelector('#username').value.trim();
-    const email    = signupElement.querySelector('#email').value.trim();
-    const password = signupElement.querySelector('#password').value;
-    const confirm  = signupElement.querySelector('#confirmPassword').value;
+    const username = usernameInput.value.trim();
+    const email    = emailInput.value.trim();
+    const password = passwordInput.value;
+    const confirm  = confirmInput.value;
 
-    // Validaciones
+   
     if (!isEmailValid(email)) {
       showErrorMessage('El email no está bien escrito');
       return;
