@@ -3,18 +3,18 @@ import { showSuccessMessage, showErrorMessage } from './signupView.js';
 import { isEmailValid } from '../utils/isEmailValid.js';
 import { isPasswordValid } from '../utils/isPasswordValid.js';
 
-export function initSignupController(signupElement, usernameInput, emailInput, passwordInput,confirmInput,) {
-  signupElement.addEventListener('submit', async (event) => {
-    event.preventDefault();
+export function initSignupController(form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    const username = usernameInput.value.trim();
-    const email    = emailInput.value.trim();
-    const password = passwordInput.value;
-    const confirm  = confirmInput.value;
+    const fd = new FormData(form);
+    // Solo usamos el email como campo username
+    const email = fd.get('email').trim();
+    const password = fd.get('password');
+    const confirm = fd.get('confirmPassword');
 
-   
     if (!isEmailValid(email)) {
-      showErrorMessage('El email no está bien escrito');
+      showErrorMessage('El correo no está bien escrito');
       return;
     }
 
@@ -24,12 +24,13 @@ export function initSignupController(signupElement, usernameInput, emailInput, p
     }
 
     try {
-      await registerUser({ username, password });
-      signupElement.reset();
+      // Enviamos `{ username: email, password }` al backend
+      await registerUser({ username: email, password });
+      form.reset();
       showSuccessMessage('Usuario creado correctamente');
-      window.location = '/';
-    } catch (error) {
-      showErrorMessage(error.message);
+      window.location.href = './login.html';
+    } catch (err) {
+      showErrorMessage(err.message);
     }
   });
 }
