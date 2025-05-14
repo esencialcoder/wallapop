@@ -1,36 +1,43 @@
 import { registerUser } from './signup.js';
-import { showSuccessMessage, showErrorMessage } from './signupView.js';
+import { showErrorMessage } from './signupView.js';
 import { isEmailValid } from '../utils/isEmailValid.js';
 import { isPasswordValid } from '../utils/isPasswordValid.js';
 
-export function initSignupController(form) {
+export function initSignupController(form, messageContainer) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const fd = new FormData(form);
-    // Solo usamos el email como campo username
     const email = fd.get('email').trim();
     const password = fd.get('password');
     const confirm = fd.get('confirmPassword');
 
     if (!isEmailValid(email)) {
-      showErrorMessage('El correo no está bien escrito');
+      showErrorMessage(messageContainer, 'El correo no está bien escrito');
+      autoClearMessage(messageContainer);
       return;
     }
 
     if (!isPasswordValid(password, confirm)) {
-      showErrorMessage('Las contraseñas no coinciden o están vacías');
+      showErrorMessage(messageContainer, 'Las contraseñas no coinciden o están vacías');
+      autoClearMessage(messageContainer);
       return;
     }
 
     try {
-      // Enviamos `{ username: email, password }` al backend
       await registerUser({ username: email, password });
       form.reset();
-      showSuccessMessage('Usuario creado correctamente');
+      localStorage.setItem('signupSuccess', 'Te has registrado con éxito');
       window.location.href = './login.html';
     } catch (err) {
-      showErrorMessage(err.message);
+      showErrorMessage(messageContainer, err.message);
+      autoClearMessage(messageContainer);
     }
   });
+}
+
+function autoClearMessage(container) {
+  setTimeout(() => {
+    container.innerHTML = '';
+  }, 3000); 
 }
