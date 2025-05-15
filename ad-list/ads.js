@@ -1,49 +1,18 @@
-export const ads = [
-  {
-    id: 1,
-    nombre: "Bicicleta de montaña",
-    descripcion:
-      "Bicicleta de montaña en buen estado, perfecta para rutas por el campo.",
-    precio: 150,
-    venta: true,
-    foto: "https://via.placeholder.com/150",
-    usuario: "usuario1",
-  },
-  {
-    id: 2,
-    nombre: "Coche de segunda mano",
-    descripcion: "Coche usado con 5 años de antigüedad. Muy buen estado.",
-    precio: 5000,
-    venta: true,
-    foto: "https://via.placeholder.com/150",
-    usuario: "usuario2",
-  },
-  {
-    id: 3,
-    nombre: "Bicicleta eléctrica",
-    descripcion:
-      "Bicicleta eléctrica, con batería nueva, ideal para ir al trabajo.",
-    precio: 700,
-    venta: true,
-    foto: "https://via.placeholder.com/150",
-    usuario: "usuario3",
-  },
-  {
-    id: 4,
-    nombre: "iPhone 11",
-    descripcion: "iPhone 11 de 128GB en perfecto estado, con caja original.",
-    precio: 400,
-    venta: true,
-    foto: "https://via.placeholder.com/150",
-    usuario: "usuario4",
-  },
-  {
-    id: 5,
-    nombre: "Mueble de salón",
-    descripcion: "Mueble de salón de segunda mano, en perfecto estado.",
-    precio: 100,
-    venta: false,
-    foto: "https://via.placeholder.com/150",
-    usuario: "usuario5",
-  },
-];
+const API_BASE_URL = "http://127.0.0.1:8000/api";
+
+export async function getAds() {
+  try {
+    const response = await fetch(`${API_BASE_URL}/ads`);
+
+    if (!response.ok) {
+      throw new Error("No se pudieron cargar los anuncios");
+    }
+
+    const ads = await response.json();
+
+    return ads;
+
+  } catch (error) {
+    throw new Error ('Error al conectar con el servidor')
+  }
+}
