@@ -39,5 +39,5 @@ export function initSignupController(form, messageContainer) {
 function autoClearMessage(container) {
   setTimeout(() => {
     container.innerHTML = '';
-  }, 3000); 
+  }, 2000); 
 }
