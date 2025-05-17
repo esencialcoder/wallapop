@@ -3,10 +3,10 @@ import { isEmailValid } from '../utils/isEmailValid.js';
 import { isPasswordValid } from '../utils/isPasswordValid.js';
 
 export function initSignupController(signupElement, pubSub) {
-  form.addEventListener('submit', async (e) => {
+  signupElement.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const fd = new FormData(form);
+    const fd = new FormData(signupElement);
     const email = fd.get('email').trim();
     const password = fd.get('password');
     const confirm = fd.get('confirmPassword');
@@ -23,7 +23,7 @@ export function initSignupController(signupElement, pubSub) {
 
     try {
       await registerUser({ username: email, password });
-      form.reset();
+      signupElement.reset();
       localStorage.setItem('signupSuccess', 'Te has registrado con éxito');
       window.location.href = './login.html';
     } catch (err) {
