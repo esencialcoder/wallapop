@@ -1,9 +1,8 @@
 import { registerUser } from './signup.js';
-import { showErrorMessage } from './signupView.js';
 import { isEmailValid } from '../utils/isEmailValid.js';
 import { isPasswordValid } from '../utils/isPasswordValid.js';
 
-export function initSignupController(form, messageContainer) {
+export function initSignupController(signupElement, pubSub) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -13,14 +12,12 @@ export function initSignupController(form, messageContainer) {
     const confirm = fd.get('confirmPassword');
 
     if (!isEmailValid(email)) {
-      showErrorMessage(messageContainer, 'El correo no está bien escrito');
-      autoClearMessage(messageContainer);
+      pubSub.publish('ERROR', 'El correo no está bien escrito')
       return;
     }
 
     if (!isPasswordValid(password, confirm)) {
-      showErrorMessage(messageContainer, 'Las contraseñas no coinciden o están vacías');
-      autoClearMessage(messageContainer);
+      pubSub.publish('ERROR', 'Las contraseñas no coinciden o están vacías')
       return;
     }
 
@@ -30,8 +27,7 @@ export function initSignupController(form, messageContainer) {
       localStorage.setItem('signupSuccess', 'Te has registrado con éxito');
       window.location.href = './login.html';
     } catch (err) {
-      showErrorMessage(messageContainer, err.message);
-      autoClearMessage(messageContainer);
+      pubSub.publish('ERROR', err.message);
     }
   });
 }
