@@ -31,9 +31,3 @@ export function initSignupController(signupElement, pubSub) {
     }
   });
 }
-
-function autoClearMessage(container) {
-  setTimeout(() => {
-    container.innerHTML = '';
-  }, 2000); 
-}
