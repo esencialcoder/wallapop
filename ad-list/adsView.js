@@ -58,9 +58,9 @@ function buildAdView(ad) {
       <div class="card-body d-flex flex-column">
         <h5 class="card-title fw-bold fs-5">${ad.nombre}</h5>
         <p class="card-text fw-medium flex-grow-1">${ad.descripcion}</p>
-        <p class="fw-bold text-primary mb-2">${ad.precio.toFixed(2)} €</p>
+        <p class="fw-bold text-primary mb-2">${ad.precio} €</p>
         <span class="badge bg-${badgeClass} mb-2">${tipoOperacion}</span>
-        <small class="text-muted mt-auto">Publicado por ${ad.usuario}</small>
+        
       </div>
     </div>
   `;
