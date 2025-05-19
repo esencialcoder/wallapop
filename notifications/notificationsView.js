@@ -7,6 +7,10 @@ export function showSuccessMessage(container, message) {
   div.textContent = message;
 
   container.appendChild(div);
+
+  setTimeout(() => {
+    clearMessages(container);
+  }, 3000);
 }
 
 export function showErrorMessage(container, message) {
