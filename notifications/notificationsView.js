@@ -10,7 +10,7 @@ export function showSuccessMessage(container, message) {
 
   setTimeout(() => {
     clearMessages(container);
-  }, 3000);
+  }, 2000);
 }
 
 export function showErrorMessage(container, message) {

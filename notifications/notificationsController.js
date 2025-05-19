@@ -2,7 +2,7 @@ import { showSuccessMessage, showErrorMessage, showLoadingMessage, clearMessages
 
 export function initNotificationsController(container, pubSub) {
     if (!container || !pubSub) {
-        console.error('⚠️ notificationsController: container o pubSub no definido');
+        console.error('notificationsController: container o pubSub no definido');
         return;
     }
 

@@ -4,7 +4,6 @@ export async function createAd(ad) {
     throw new Error("Debes iniciar sesión para publicar un anuncio.");
   }
 
-  // 1️⃣ SUBIR FOTO (si hay)
   let photoURL = "";
 
   if (ad.photo && ad.photo.size > 0) {
@@ -27,7 +26,6 @@ export async function createAd(ad) {
     photoURL = uploadData.url;
   }
 
-  // 2️⃣ ENVIAR ANUNCIO COMO JSON
   const adData = {
     nombre: ad.name,
     descripcion: ad.description,
@@ -51,6 +49,5 @@ export async function createAd(ad) {
   }
 
   const result = await response.json();
-  console.log("✅ Anuncio creado:", result); // Debe incluir `usuario`
   return result;
 }

@@ -1,51 +1,28 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-  }
-  
-  .tarjeta-anuncio {
-    background-color: #ffffff;
-    border: 2px solid #007bff;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform
-  }  
-  
-  .tarjeta-anuncio:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .tarjeta-anuncio img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 12px;
-  }
-  
-  .tarjeta-anuncio .titulo {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #333;
-  }
-  
-  .tarjeta-anuncio p {
-    flex-grow: 1;
-    color: #555;
-  }
-  
-  .tarjeta-anuncio .precio {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #28a745;
-    margin-top: 8px;
-  }
-  
-  .tarjeta-anuncio small {
-    color: #6c757d;
-    margin-top: auto;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.tarjeta-anuncio {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.tarjeta-anuncio:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-anuncio .titulo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.tarjeta-anuncio .precio {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 8px;
+}

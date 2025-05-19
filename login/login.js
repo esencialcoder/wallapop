@@ -1,4 +1,3 @@
-// login/login.js
 export async function loginUser({ username, password }) {
   const resp = await fetch("http://localhost:8000/auth/login", {
     method: "POST",
@@ -10,7 +9,7 @@ export async function loginUser({ username, password }) {
     throw new Error(err.message || "Usuario o contraseña incorrectos");
   }
   const data  = await resp.json();
-  const token = data.accessToken; // la API devuelve accessToken
+  const token = data.accessToken; 
   if (!token) throw new Error("No se ha recibido token del servidor");
   return token;
 }
