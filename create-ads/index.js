@@ -1,5 +1,9 @@
-import { initAdsCreateController } from "./createAdsController.js";
+import { initCreateAdsController } from "./createAdsController.js";
+import { initNotificationsController } from "../notifications/notificationsController.js";
+import { pubSub } from "../pubSub.js";
 
-const createAdsElement = document.querySelector("#create-ads-form");
+const adsCreateElement = document.querySelector("#ads-create-form");
+const notificationsElement = document.querySelector("#notifications");
 
-initAdsCreateController(createAdsElement);
+initNotificationsController(notificationsElement, pubSub);
+initCreateAdsController(adsCreateElement, pubSub);
