@@ -54,16 +54,18 @@ function buildAdView(ad) {
   article.classList.add("col-md-4", "mb-4");
 
   article.innerHTML = `
-    <div class="card h-100 shadow-sm">
-      <div class="card-body d-flex flex-column">
-        <h5 class="card-title fw-bold fs-5">${ad.nombre}</h5>
-        <p class="card-text fw-medium flex-grow-1">${ad.descripcion}</p>
-        <p class="fw-bold text-primary mb-2">${ad.precio} €</p>
-        <span class="badge bg-${badgeClass} mb-2">${tipoOperacion}</span>
-        
+    <a href="./ads-detail.html?id=${ad.id}" class="text-decoration-none text-dark">
+      <div class="card tarjeta-anuncio h-100">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title titulo">${ad.nombre}</h5>
+          <p class="card-text flex-grow-1">${ad.descripcion}</p>
+          <p class="fw-bold text-primary mb-2">${ad.precio} €</p>
+          <span class="badge bg-${badgeClass} mb-2">${tipoOperacion}</span>
+        </div>
       </div>
-    </div>
+    </a>
   `;
 
   return article;
-}
+} 
+
