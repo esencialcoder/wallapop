@@ -22,6 +22,9 @@ export function initCreateAdsController(adsCreateElement, pubSub) {
 
     if (!ad.name || !ad.description || isNaN(ad.price) || formData.get("sale") == null) {
       pubSub.publish("ERROR", "Completa todos los campos obligatorios.");
+      setTimeout( () => {
+        pubSub.publish('CLEAR');
+      }, 1500);
       return;
     }
 
