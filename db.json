@@ -1,0 +1,226 @@
+{
+  "users": [
+    {
+      "username": "pepe@pepe.es",
+      "password": "$2b$10$k8fvHLNBMsBAs8U.9PQJCOyjJyRWw/UfMyGtxZSQ67fwqBKeHvN/m",
+      "id": 1
+    },
+    {
+      "username": "juan@juan.es",
+      "password": "$2b$10$k8fvHLNBMsBAs8U.9PQJCOyjJyRWw/UfMyGtxZSQ67fwqBKeHvN/m",
+      "id": 2
+    },
+    {
+      "username": "lucia@lucia.es",
+      "password": "$2b$10$k8fvHLNBMsBAs8U.9PQJCOyjJyRWw/UfMyGtxZSQ67fwqBKeHvN/m",
+      "id": 3
+    },
+    {
+      "username": "nuria@nuria.es",
+      "password": "$2b$10$k8fvHLNBMsBAs8U.9PQJCOyjJyRWw/UfMyGtxZSQ67fwqBKeHvN/m",
+      "id": 4
+    },
+    {
+      "username": "nuri.98@nuri.com",
+      "password": "$2b$10$k8fvHLNBMsBAs8U.9PQJCOO1aGO91b3FpSbDTdymNm1UKBtU93I7u",
+      "id": 5
+    },
+    {
+      "username": "carlos@carlos.es",
+      "password": "$2b$10$YJtW6GJ2C.icEVZRa1CgI.SjDGNyskBbUGMLXLHlNGX3DXuK9bmDG",
+      "id": 6
+    }
+  ],
+  "ads": [
+    {
+      "nombre": "Vendo lámpara de pie vintage",
+      "descripcion": "Lámpara retro de los años 70, funcionando, ideal para decoración.",
+      "precio": 45,
+      "venta": true,
+      "foto": "",
+      "userId": 1,
+      "updatedAt": "2025-05-19T18:02:49.272Z",
+      "id": 1
+    },
+    {
+      "nombre": "Busco patines en línea talla 39",
+      "descripcion": "Para chica, usados pero en buen estado. Recogería en Granada o alrededores.",
+      "precio": 25,
+      "venta": true,
+      "foto": "",
+      "userId": 1,
+      "updatedAt": "2025-05-19T18:03:32.551Z",
+      "id": 2
+    },
+    {
+      "nombre": "Compro aspiradora sin cable",
+      "descripcion": "Interesado en Dyson o similar, buena batería y filtros limpios.",
+      "precio": 80,
+      "venta": false,
+      "foto": "",
+      "userId": 1,
+      "updatedAt": "2025-05-19T18:04:13.917Z",
+      "id": 3
+    },
+    {
+      "nombre": "Compro silla gaming",
+      "descripcion": "Busco silla ergonómica de gaming, preferible con cojín lumbar y en buen estado",
+      "precio": 70,
+      "venta": false,
+      "foto": "",
+      "userId": 2,
+      "updatedAt": "2025-05-19T18:06:09.921Z",
+      "id": 4
+    },
+    {
+      "nombre": "Portátil HP 15 pulgadas",
+      "descripcion": "Windows 11, 8GB RAM, SSD 256GB. Perfecto para estudiar o trabajar.",
+      "precio": 250,
+      "venta": true,
+      "foto": "",
+      "userId": 2,
+      "updatedAt": "2025-05-19T18:07:23.480Z",
+      "id": 5
+    },
+    {
+      "nombre": "Set LEGO Star Wars",
+      "descripcion": "Caja completa, todas las piezas y manual. Ideal para coleccionistas.",
+      "precio": 60,
+      "venta": true,
+      "foto": "",
+      "userId": 2,
+      "updatedAt": "2025-05-19T18:30:20.569Z",
+      "id": 6
+    },
+    {
+      "nombre": "Vendo guitarra eléctrica Fender",
+      "descripcion": "Fender Stratocaster, color sunburst, con funda y correa. Sonido impecable, usada solo en casa.",
+      "precio": 320,
+      "venta": true,
+      "foto": "",
+      "userId": 3,
+      "updatedAt": "2025-05-19T18:50:06.359Z",
+      "id": 7
+    },
+    {
+      "nombre": "Busco libros de Harry Potter",
+      "descripcion": "Me faltan los tomos 4, 5 y 6 en tapa dura. Pago más si están nuevos.",
+      "precio": 25,
+      "venta": true,
+      "foto": "",
+      "userId": 3,
+      "updatedAt": "2025-05-19T18:50:52.541Z",
+      "id": 8
+    },
+    {
+      "nombre": "Chaqueta vaquera Levi’s",
+      "descripcion": "Original, talla L, casi sin usar. Entrego en mano en Valencia.",
+      "precio": 35,
+      "venta": true,
+      "foto": "",
+      "userId": 3,
+      "updatedAt": "2025-05-19T18:51:41.534Z",
+      "id": 9
+    },
+    {
+      "nombre": "Set de pesas y mancuernas",
+      "descripcion": "2 mancuernas ajustables y barra para discos. Ideales para entrenar en casa.",
+      "precio": 55,
+      "venta": true,
+      "foto": "",
+      "userId": 4,
+      "updatedAt": "2025-05-19T18:53:52.621Z",
+      "id": 10
+    },
+    {
+      "nombre": "Busco teclado mecánico gaming",
+      "descripcion": "Quiero teclado con luces RGB, que no tenga muchas horas de uso.",
+      "precio": 30,
+      "venta": false,
+      "foto": "",
+      "userId": 4,
+      "updatedAt": "2025-05-19T18:54:33.059Z",
+      "id": 11
+    },
+    {
+      "nombre": "Compro cámara réflex Canon",
+      "descripcion": "Interesado en modelos Canon EOS, que incluyan objetivo básico.",
+      "precio": 180,
+      "venta": false,
+      "foto": "",
+      "userId": 4,
+      "updatedAt": "2025-05-19T18:55:28.259Z",
+      "id": 12
+    },
+    {
+      "nombre": "Busco mesa de comedor extensible",
+      "descripcion": "Necesito mesa extensible, de madera, para mínimo 6 personas. Zona Barcelona.",
+      "precio": 100,
+      "venta": false,
+      "foto": "",
+      "userId": 1,
+      "updatedAt": "2025-05-19T18:56:46.105Z",
+      "id": 13
+    },
+    {
+      "nombre": "Nintendo Switch Lite azul",
+      "descripcion": "Consola casi nueva, con caja original y cargador. Incluye Animal Crossing.",
+      "precio": 130,
+      "venta": true,
+      "foto": "",
+      "userId": 1,
+      "updatedAt": "2025-05-19T18:57:26.142Z",
+      "id": 14
+    },
+    {
+      "nombre": "Compra de vinilos antiguos",
+      "descripcion": "Interesado en colecciones de discos de vinilo, preferencia rock clásico.",
+      "precio": 30,
+      "venta": false,
+      "foto": "",
+      "userId": 1,
+      "updatedAt": "2025-05-19T18:58:16.163Z",
+      "id": 15
+    },
+    {
+      "nombre": "Vendo bicicleta de montaña",
+      "descripcion": "Bicicleta Orbea, perfecta para iniciarse. Buen estado, poco uso. Incluye luces y casco",
+      "precio": 150,
+      "venta": true,
+      "foto": "",
+      "userId": 2,
+      "updatedAt": "2025-05-19T18:59:57.735Z",
+      "id": 16
+    },
+    {
+      "nombre": "Busco cafetera italiana vintage",
+      "descripcion": "Interesado en cafetera de aluminio, preferible marca Bialetti, en buen estado.",
+      "precio": 15,
+      "venta": false,
+      "foto": "",
+      "userId": 2,
+      "updatedAt": "2025-05-19T19:01:00.873Z",
+      "id": 17
+    },
+    {
+      "nombre": "Vendo altavoz Bluetooth JBL",
+      "descripcion": "Sonido potente, resistente al agua, color azul.",
+      "precio": 38,
+      "venta": true,
+      "foto": "",
+      "userId": 2,
+      "updatedAt": "2025-05-19T19:02:00.381Z",
+      "id": 18
+    },
+    {
+      "nombre": "Clases de surf",
+      "descripcion": "Ofrezco clases buenas, bonitas y baratas",
+      "precio": 5000,
+      "venta": true,
+      "foto": "",
+      "userId": 5,
+      "updatedAt": "2025-05-19T19:06:24.661Z",
+      "id": 19
+    }
+  ]
+}
