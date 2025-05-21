@@ -1,10 +1,8 @@
-import { initAdsDetailController } from './adsDetailController.js';
-import { initNotificationsController } from '../notifications/notificationsController.js';
-import { pubSub } from '../pubSub.js';
+import { initAdsDetailController } from "./adsDetailController.js";
+import { pubSub } from "../pubSub.js";
 
+const adDetailElement = document.querySelector("#ad-detail");
+const confirmDeleteBtn = document.querySelector("#confirm-delete-btn");
+const confirmDeleteModal = document.getElementById("confirmDeleteModal");
 
-const adDetailElement = document.querySelector('#ad-detail');
-const notificationsElement = document.querySelector('#notifications');
-
-initNotificationsController(notificationsElement, pubSub);
-initAdsDetailController(adDetailElement, pubSub);
+initAdsDetailController(adDetailElement, confirmDeleteBtn, confirmDeleteModal, pubSub);
